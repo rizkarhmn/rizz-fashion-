@@ -1,0 +1,262 @@
+```html
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rizz fashion - Toko Baju Terlengkap & Modern</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter & Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1',
+                        darkBg: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Top Notification Bar -->
+    <div class="bg-indigo-600 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-inner">
+        🔥 <span class="font-bold">PROMO HARI INI:</span> Diskon spesial &amp; Gratis Ongkir untuk semua produk pilihan! Order via WA: <a href="https://wa.me/6287753511576" target="_blank" class="underline font-bold">087753511576</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Store Name -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('store')">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white font-bold text-2xl shadow-md shadow-indigo-200">
+                        R
+                    </div>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-black tracking-wider text-gray-900 uppercase">rizz fashion</h1>
+                        <p class="text-xs text-indigo-600 font-semibold tracking-wide">Pusat Busana Anak &amp; Dewasa</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Tabs / Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-gray-600">
+                    <button onclick="switchTab('store')" id="nav-store" class="text-indigo-600 font-semibold hover:text-indigo-600 transition">Katalog Toko</button>
+                    <button onclick="switchTab('admin')" id="nav-admin" class="hover:text-indigo-600 transition flex items-center gap-1.5"><i class="fa-solid fa-boxes-stacked"></i> Input Stok Baru</button>
+                    <button onclick="openCartModal()" class="relative hover:text-indigo-600 transition flex items-center gap-1.5 bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg">
+                        <i class="fa-solid fa-cart-shopping"></i> Keranjang
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold shadow">0</span>
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu & Cart Trigger -->
+                <div class="flex items-center space-x-3 md:hidden">
+                    <button onclick="openCartModal()" class="relative bg-indigo-50 text-indigo-700 p-2.5 rounded-lg">
+                        <i class="fa-solid fa-cart-shopping text-lg"></i>
+                        <span id="cart-badge-mobile" class="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">0</span>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="text-gray-700 p-2 focus:outline-none">
+                        <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-2">
+            <button onclick="switchTab('store'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded-lg hover:bg-gray-50 font-medium text-gray-700">Katalog Toko</button>
+            <button onclick="switchTab('admin'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded-lg hover:bg-gray-50 font-medium text-gray-700"><i class="fa-solid fa-boxes-stacked mr-2"></i> Input Stok Baru</button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+
+        <!-- STORE TAB CONTENT -->
+        <div id="tab-store" class="space-y-10 pb-16">
+            
+            <!-- Hero Banner Section -->
+            <section class="relative bg-gradient-to-r from-gray-900 via-indigo-950 to-indigo-900 text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+                <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6 text-center md:text-left">
+                        <span class="bg-indigo-500/30 border border-indigo-400/40 text-indigo-300 text-xs uppercase px-3 py-1 rounded-full font-bold tracking-wider">Koleksi Terbaru 2026</span>
+                        <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Tampil Gaya &amp; Percaya Diri Bersama <span class="text-indigo-400">Rizz Fashion</span></h2>
+                        <p class="text-gray-300 text-sm sm:text-base">Temukan pilihan busana terbaik untuk Anak, Dewasa, Pria, dan Wanita dengan kualitas premium, merk terpercaya, dan harga bersahabat.</p>
+                        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                            <a href="#katalog-section" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg shadow-indigo-600/30 transition transform hover:-translate-y-0.5">Jelajahi Katalog</a>
+                            <a href="https://wa.me/6287753511576" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3 rounded-xl backdrop-blur transition flex items-center gap-2"><i class="fa-brands fa-whatsapp text-green-400 text-lg"></i> Chat Admin WA</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-center">
+                        <div class="relative w-72 h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 transform rotate-2 hover:rotate-0 transition duration-300">
+                            <img src="https://placehold.co/400x600/312e81/ffffff?text=Rizz+Fashion+Look" alt="Fashion Model" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-center">
+                                <p class="text-sm font-bold text-white">Trend Fashion Masa Kini</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROMO SECTION (Etalase Paling Atas-Depan) -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between mb-6 border-b pb-3">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-lg bg-rose-500 text-white flex items-center justify-center shadow-md">
+                            <i class="fa-solid fa-fire text-sm"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Etalase Produk Promo Spesial</h3>
+                    </div>
+                    <span class="text-xs sm:text-sm bg-rose-100 text-rose-700 font-bold px-3 py-1 rounded-full animate-pulse">Penawaran Terbatas</span>
+                </div>
+
+                <!-- Grid Produk Promo -->
+                <div id="promo-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Dinamis via JavaScript -->
+                </div>
+            </section>
+
+            <!-- KATALOG UTAMA & FILTER SECTION -->
+            <section id="katalog-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4 border-b pb-4">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Katalog Lengkap Rizz Fashion</h3>
+                        <p class="text-sm text-gray-500">Pilih kategori dan temukan busana impianmu</p>
+                    </div>
+
+                    <!-- Category Filter Buttons -->
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterCategory('semua')" id="btn-cat-semua" class="category-btn bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow transition">Semua</button>
+                        <button onclick="filterCategory('Anak')" id="btn-cat-Anak" class="category-btn bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-xl text-sm font-semibold transition">Anak</button>
+                        <button onclick="filterCategory('Pria')" id="btn-cat-Pria" class="category-btn bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-xl text-sm font-semibold transition">Pria</button>
+                        <button onclick="filterCategory('Wanita')" id="btn-cat-Wanita" class="category-btn bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-xl text-sm font-semibold transition">Wanita</button>
+                        <button onclick="filterCategory('Dewasa')" id="btn-cat-Dewasa" class="category-btn bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-xl text-sm font-semibold transition">Dewasa</button>
+                    </div>
+                </div>
+
+                <!-- Main Product Grid -->
+                <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Dinamis via JavaScript -->
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ADMIN TAB: INPUT STOK BARU -->
+        <div id="tab-admin" class="hidden max-w-4xl mx-auto px-4 py-10 space-y-8">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-8">
+                <div class="flex items-center space-x-3 mb-6 border-b pb-4">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-plus-circle text-lg"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900">Form Input Stok &amp; Produk Baru</h2>
+                        <p class="text-xs text-gray-500">Tambahkan produk baru ke etalase toko rizz fashion secara instan</p>
+                    </div>
+                </div>
+
+                <form id="addProductForm" onsubmit="handleAddNewProduct(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Produk / Desain Baju *</label>
+                            <input type="text" id="input-name" required placeholder="Contoh: Kemeja Flanel Premium" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Kategori Produk *</label>
+                            <select id="input-category" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm bg-white">
+                                <option value="Pria">Pria</option>
+                                <option value="Wanita">Wanita</option>
+                                <option value="Anak">Anak</option>
+                                <option value="Dewasa">Dewasa (Unisex)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Harga (Rp) *</label>
+                            <input type="number" id="input-price" required placeholder="125000" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Ukuran Tersedia *</label>
+                            <input type="text" id="input-size" required placeholder="S, M, L, XL atau All Size" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Jumlah Stok *</label>
+                            <input type="number" id="input-stock" required placeholder="25" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Merk / Brand *</label>
+                            <input type="text" id="input-brand" required placeholder="Contoh: Rizz Original, Zara Kids, dll" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Status Promo?</label>
+                            <select id="input-promo" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm bg-white">
+                                <option value="false">Tidak (Masuk Katalog Biasa)</option>
+                                <option value="true">Ya (Tampilkan di Etalase Promo Teratas)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Spesifikasi &amp; Detail Bahan *</label>
+                        <textarea id="input-specs" rows="3" required placeholder="Contoh: Bahan katun combed 30s adem, jahitan rapi standar distro, nyaman dipakai sehari-hari." class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">URL Gambar / Foto Produk (Opsional)</label>
+                        <input type="url" id="input-image" placeholder="https://placehold.co/400x500/..." class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm">
+                        <p class="text-xs text-gray-400 mt-1">Kosongkan jika ingin menggunakan gambar placeholder otomatis.</p>
+                    </div>
+
+                    <div class="flex justify-end space-x-4 pt-4 border-t">
+                        <button type="button" onclick="switchTab('store')" class="px-5 py-2.5 rounded-xl border border-gray-300 text-gray-700 font-medium text-sm hover:bg-gray-50 transition">Batal</button>
+                        <button type="submit" class="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 transition">Simpan &amp; Tambah Stok</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Information -->
+    <footer class="bg-gray-900 text-gray-300 pt-12 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div class="space-y-3">
+                <h3 class="text-xl font-bold text-white tracking-wider uppercase">rizz fashion</h3>
+                <p class="text-sm text-gray-400">Pusat belanja baju online terpercaya untuk seluruh anggota keluarga. Koleksi lengkap, kualitas terjamin, harga bersahabat.</p>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">Kontak &amp; Layanan Pelanggan</h4>
+                <p class="text-sm flex items-center gap-2"><i class="fa-brands fa-whatsapp text-green-400"></i> WhatsApp: <a href="https://wa.me/6287753511576" target="_blank" class="hover:text-white underline">087753511576</a></p>
+                <p class="text-sm flex items-center gap-2"><i class="fa-brands fa-instagram text-pink-400"></i> Instagram: <a href="https://instagram.com/xrizz_17" target="_blank" class="hover:text-white underline">@xrizz_17</a></p>
+                <p class="text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-indigo-400"></i> Lokasi: Indonesia</p>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">Metode Pembayaran Tersedia</h4>
+                <div class="flex flex-wrap gap-2 text-xs">
+                    <span class="bg-gray-800 border border-gray-700 px-2.5 py-1 rounded-md text-gray-300">COD</span>
+                    <span class="bg-gray-800 border border-gray-700 px-2.5 py-1 rounded-md text-gray-300">Cash</span>
+                    <span class="bg-gray-800 border border-gray-700 px-2.5 py-1 rounded-md text-gray-300">Angsuran</span>
+                    <span class="bg-gray-800 border border-gray-700 px-2.5 py-1 rounded-md text-gray-300">QRIS</span>
+                    <span class="bg-gray-800 border border-gray-700 px-2.5 py-1 rounded-md text-gray-300">Transfer BRI</span>
+                    <span class="bg-gray-800 border border-gray-700 px-2.5 py-1 rounded-md text-gray-300">BCA</span>
+                    <span class="bg-gray-800 border border-gray-700 px-2.5 py-1 rounded-md text-gray-300">BSI</span>
+                    <span class="bg-gray-800 border border-gray-700 px-2.5 py-1 rounded-md text-gray-300">DANA</span>
+                    <span class="bg-gray-800 border border-gray-700 px-2.5 py-1 rounded-md text-gray-300">OVO</span>
+                    <span class="bg-gray-800 border border-gray-700 px-2.5 py-1 rounded-md text-gray-300">GoPay</span>
+                    <span class="bg-gray-800 border borde
